@@ -1,5 +1,6 @@
 import { useState} from 'react'
 
+import FormInput from '../form-input/form-input.component';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 
 const defaultFormFields = {
@@ -44,7 +45,7 @@ const SignUpForm = () => {
   }
 
   const handleChange = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
 
     setFormFields({ ...formFields, [name]: value})
   }
@@ -53,34 +54,38 @@ const SignUpForm = () => {
     <div>
         <h1>Sign up with your email and password</h1>
         <form onSubmit={handleSubmit}>
-            <label>Display Name</label>
-            <input 
+            <FormInput
+                label="Name"
                 type='text' 
                 name='displayName' 
                 value={displayName} 
                 required
-                onChange={handleChange} />
-            <label>Email</label>
-            <input 
+                onChange={handleChange} 
+            />
+            <FormInput
+                label="Email"
                 type='email' 
                 name='email' 
                 value={email}
                 required
-                onChange={handleChange} />
-            <label>Password</label>
-            <input 
+                onChange={handleChange} 
+            />
+            <FormInput
+                label="Password"
                 type='password' 
                 name='password'
                 value={password} 
                 required
-                onChange={handleChange} />
-            <label>Confirm Password</label>
-            <input 
+                onChange={handleChange} 
+            />
+           <FormInput
+                label="Confirm Password"
                 type='password' 
                 name='confirmPassword' 
                 value={confirmPassword} 
                 required
-                onChange={handleChange} />
+                onChange={handleChange}
+            />
             <button type='submit'>Sign Up</button>
         </form>
     </div>
