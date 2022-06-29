@@ -21,7 +21,7 @@ return (
             <span className='value'>{quantity}</span>
             <div className='arrow' onClick={addItemHandler}>&#10095;</div>
         </span>
-        <span className='price'> {price} </span>
+        <span className='price'> ${price} </span>
         <strong className='remove-button' onClick={clearItemHandler}>&#10005;</strong>
     </div>
 )
